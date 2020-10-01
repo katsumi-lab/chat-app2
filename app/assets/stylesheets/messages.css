@@ -1,0 +1,75 @@
+.wrapper{
+  display: flex;
+}
+
+.side_bar{
+  width: 300px;
+  height: 100vh;
+  background-color: #253141;
+}
+
+.side_bar_header{
+  height: 100px;
+  padding: 0 20px;
+  background-color: #253141;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-name a{
+  color: #fafafa;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+.create-name{
+padding: 33px 20px 33px 0;
+}
+
+.create-name a{
+ color: deepskyblue;
+ font-size: 10px;
+ padding: 14px;
+ text-decoration: none;
+ border: 1px lightblue solid;
+}
+
+.rooms{
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.room {
+  padding: 20px 20px 40px 20px;
+}
+
+.room-name a{
+  text-decoration: none;
+  color: white;
+}
+
+.chat{
+  width: calc(100vw - 300px);
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.chat_header{
+  height: 100px;
+  padding: 0 40px;
+}
+
+.messages{
+  height: calc(100vh - 190px);
+  background-color: #fafafa;
+  padding: 46px 40px 0 40px;
+}
+
+.form{
+  height: 90px;
+  background-color: #dddddd;
+  padding: 20px 40px;
+}
