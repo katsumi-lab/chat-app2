@@ -1,12 +1,16 @@
 <div class="message">
   <div class="upper-message">
     <div class="message-user">
-    <!-- messageテーブルのuser_idに紐付くユーザー名user.name -->
-    <%= message.user.name%>
+      <!-- 投稿したユーザー名情報を出力する -->
+      <%= message.user.name %>
+      <!-- messageテーブルのuser_idに紐付くユーザー名user.name -->
+      <%= message.user.name%>
     </div>
     <div class="message-date">
-    <!-- messageテーブルのcreated_atカラム -->
-    <%= message.created_at%>
+      <!-- 投稿した時刻を出力する -->
+      <%= l message.created_at %>
+      <!-- messageテーブルのcreated_atカラム -->
+      <%= message.created_at%>
     </div>
   </div>
   <div class="lower-message">
