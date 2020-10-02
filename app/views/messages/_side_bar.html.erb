@@ -8,10 +8,10 @@
 </div>
 
 <div class="rooms">
-  <% current_user.rooms.each do |room| %> <%#全てのチャットルームに対して同じ処理%>
+  <% current_user.rooms.each do |room| %>
     <div class="room">
       <div class="room-name">
-        <a href="#"><%= room.name %></a> <%#nameはroomsのカラム名%>
+        <a href="#"><%= room.name %></a>
       </div>
     </div>
   <% end %>
