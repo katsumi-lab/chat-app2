@@ -2,13 +2,13 @@
   display: flex;
 }
 
-.side_bar{
+.side-bar{
   width: 300px;
   height: 100vh;
   background-color: #253141;
 }
 
-.side_bar_header{
+.side-bar-header{
   height: 100px;
   padding: 0 20px;
   background-color: #253141;
@@ -23,11 +23,11 @@
   padding-left: 20px;
 }
 
-.create-name{
+.create-room{
 padding: 33px 20px 33px 0;
 }
 
-.create-name a{
+.create-room a{
  color: deepskyblue;
  font-size: 10px;
  padding: 14px;
@@ -159,4 +159,8 @@ padding: 33px 20px 33px 0;
 
 .hidden {
   display: none;
+}
+
+.field_with_errors {
+  display: contents;
 }

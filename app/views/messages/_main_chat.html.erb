@@ -1,18 +1,20 @@
 <div class="chat_header">
   <div class="left-header">
     <div class="header-title">
-      hogefuga
+      <%= @room.name %>
     </div>
   </div>
   <div class="right-header">
     <div class="header-button">
-      <a href="#">チャットを終了する</a>
+    <%#削除するルームを区別する為@roomを引数にし、room_path(@room)を指定する%>
+      <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
     </div>
   </div>
 </div>
 
 <div class="messages">
-  <div class="message">
+<!--ここから削除-->
+  <%# <<div class="message">
     <div class="upper-message">
       <div class="message-user">
         Tom
@@ -27,7 +29,6 @@
       </div>
     </div>
   </div>
-
   <div class="message">
     <div class="upper-message">
       <div class="message-user">
@@ -42,16 +43,19 @@
         こんばんは
       </div>
     </div>
-  </div>
+  </div>> %>
+  <!--ここまで-->
+  <%= render partial: 'message', collection: @messages %> <%#_message_html.erbを読み込み%>
 </div>
 
-<div class="form">
-  <div class="form-input">
-    <input class="form-message" placeholder= "type a message">
+<%#form_withの引数に@room、@messageになるのはルーティングのネストだから%>
+  <%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f| %>
+    <div class="form-input">
+      <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
       <label class="form-image">
         <span class="image-file">画像</span>
-        <input type="file" class="hidden">
+        <%= f.file_field :image, class: 'hidden' %>
       </label>
-  </div>
-  <input class="form-submit" type="submit" value="送信">
-</div>
+    </div>
+    <%= f.submit '送信', class: 'form-submit' %>
+  <% end %>
