@@ -12,7 +12,8 @@
 </div>
 
 <div class="messages">
-  <div class="message">
+<!--ここから削除-->
+  <%# <<div class="message">
     <div class="upper-message">
       <div class="message-user">
         Tom
@@ -41,7 +42,9 @@
         こんばんは
       </div>
     </div>
-  </div>
+  </div>> %>
+  <!--ここまで-->
+  <%= render partial: 'message', collection: @messages %> <%#_message_html.erbを読み込み%>
 </div>
 
 <%#form_withの引数に@room、@messageになるのはルーティングのネストだから%>

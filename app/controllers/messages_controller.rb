@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   def index
     @messages = Message.new
     @room = Room.find(params[:room_id]) #/rooms:room_id/messages
+    @messages = @room.messages.includes(:user) #チャットルームのメッセージを代入。メッセージ情報に紐付くユーザー情報を纏めて取得
   end
 
   def create
@@ -10,6 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to room_messages_path(@room)
     else
+      @messages = @room.messages.includes(:user)
       render :index
     end
   end
